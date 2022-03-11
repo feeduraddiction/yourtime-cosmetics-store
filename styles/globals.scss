@@ -14,3 +14,40 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 39px;
+}
+h3 {
+  font-size: 31px;
+}
+h4 {
+  font-size: 25px;
+}
+h5 {
+  font-size: 20px;
+}
+p {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+  margin: 0;
+  padding: 0;
+}
+
+
+button {
+  font-size: 16px;
+  font-weight: 700;
+}
+
