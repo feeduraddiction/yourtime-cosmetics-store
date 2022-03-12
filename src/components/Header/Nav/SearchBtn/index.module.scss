@@ -1,0 +1,17 @@
+.search {
+  position: relative;
+
+  input {
+    position: absolute;
+    top: 35px;
+    left: -100px;
+    z-index: 2;
+    transition: all 0.4s ease;
+  }
+}
+
+.hidden {
+  input {
+    top: -100px;
+  }
+}
