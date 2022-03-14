@@ -4,7 +4,7 @@ import SearchBtn from "./SearchBtn";
 
 const Nav = () => {
   return (
-    <ul>
+    <ul className={classes.nav}>
       <SearchBtn />
       <li>
         <div className={classes.cart}>

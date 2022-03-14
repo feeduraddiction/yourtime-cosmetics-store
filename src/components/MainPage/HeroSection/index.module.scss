@@ -1,0 +1,16 @@
+.heroSection{
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    background-image: url('../../../assets/img/hero-section-main.png');
+    height: 560px;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 15px;
+}

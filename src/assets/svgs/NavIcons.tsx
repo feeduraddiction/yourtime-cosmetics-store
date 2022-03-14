@@ -1,4 +1,4 @@
-import classes from "./NavIcons.module.scss";
+import classes from "../../../styles/NavIcons.module.scss";
 
 export interface iconPropTypes {
     onClick?: () => void

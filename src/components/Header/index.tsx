@@ -12,10 +12,10 @@ const Header = () => {
   return (
     <header className={`${classes['header']} ${isSearchActive && classes.opacityOut}`}>
       {!isSearchActive && (
-        <Fragment>
+        <div className={classes.content}>
           <Image src={require("@assets/img/logo.png")} alt="logo" />
           <Nav />
-        </Fragment>
+        </div>
       )}
       {isSearchActive && <Search />}
     </header>

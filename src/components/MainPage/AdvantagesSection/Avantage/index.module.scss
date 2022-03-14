@@ -1,0 +1,19 @@
+@import "styles/mediaSizes";
+
+.advantage {
+  text-align: center;
+  width: calc(100% / 4 - 40px);
+  margin: 40px 20px;
+}
+
+@media (max-width: $tablet-vertical) {
+  .advantage {
+    width: calc(100% / 2 - 40px);
+  }
+}
+
+@media (max-width: $mobile) {
+  .advantage {
+    width: calc(100% / 1 - 40px);
+  }
+}

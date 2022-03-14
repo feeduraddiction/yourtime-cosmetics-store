@@ -1,0 +1,19 @@
+@import "styles/colors";
+
+.content {
+  max-width: 1120px;
+  padding: 30px 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h3 {
+    color: $primary;
+  }
+
+  p {
+    margin: 8px 0 24px 0;
+  }
+}
