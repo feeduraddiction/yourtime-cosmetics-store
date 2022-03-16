@@ -2,11 +2,14 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import store from "@store/store";
+import Layout from "@components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }

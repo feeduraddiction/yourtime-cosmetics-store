@@ -1,0 +1,17 @@
+@import "styles/colors";
+
+.counter {
+  button {
+    padding: 0;
+    height: 27px;
+    width: 27px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    background-color: $primary-light;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}

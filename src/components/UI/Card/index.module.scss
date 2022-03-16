@@ -2,8 +2,12 @@
 
 .card {
   width: 207px;
+  height: 366px;
   position: relative;
   margin: 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   button {
     width: 100%;
@@ -21,6 +25,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 0 10px 5px 10px;
 }
 
@@ -35,4 +40,5 @@
   top: 0;
   left: 0;
   transition: all 0.4s ease;
+  cursor: pointer;
 }

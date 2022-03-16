@@ -1,0 +1,38 @@
+@import 'styles/mediaSizes';
+
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 24px;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    h3 {
+        margin-top: 25px;
+    }
+}
+
+.counter {
+    display: flex;
+}
+
+@media(max-width: $mobile) {
+    .cart {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .total,
+    .counter {
+        margin-bottom: 24px;
+    }
+ 
+}

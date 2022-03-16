@@ -1,0 +1,23 @@
+@import "styles/colors";
+
+.iconNav {
+  fill: $black;
+  transition: 0.3s ease;
+  //   margin: 0 13px;
+  cursor: pointer;
+
+  &:hover {
+    fill: $primary-light;
+  }
+}
+
+.iconSocial {
+  fill: $primary-light;
+  transition: 0.3s ease;
+  margin: 0 12px;
+  cursor: pointer;
+
+  &:hover {
+    fill: $white;
+  }
+}

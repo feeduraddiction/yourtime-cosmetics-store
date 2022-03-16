@@ -10,14 +10,18 @@
   input {
     outline: none;
     border: none;
-    border-bottom: 1px solid $black;
+    border-bottom: 2px solid $black;
     margin: 40px 50px 40px 0px;
     height: 36px;
-    width: 40%;
+    width: 33%;
+
+    &::placeholder {
+      color: $primary-light;
+      font-size: 16px;
+    }
   }
 
   input[type="text"] {
-    color: $primary-light-2;
     font-size: 16px;
   }
 }

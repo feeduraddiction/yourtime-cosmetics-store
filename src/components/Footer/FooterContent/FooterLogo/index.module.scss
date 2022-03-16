@@ -1,0 +1,17 @@
+@import 'styles/mediaSizes';
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1{
+        margin-bottom: 12px;
+    }
+}
+
+@media(max-width: $tablet-vertical) {
+    .logo{
+        display: none;
+    }
+}

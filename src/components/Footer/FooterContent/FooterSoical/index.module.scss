@@ -1,0 +1,19 @@
+@import "styles/mediaSizes";
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h4 {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: $tablet-vertical) {
+  .social {
+    h4 {
+      display: none;
+    }
+  }
+}

@@ -8,7 +8,7 @@
   align-items: center;
   padding: 0 15px;
   margin: 0 auto;
-  z-index: 3;
+  z-index: 15;
   background-color: rgba(255, 255, 255, 0.85);
   animation: opacity 0.5s ease;
   position: sticky;
@@ -24,6 +24,11 @@
 
   img {
     width: 120px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    &:hover{
+      filter: opacity(0.5);
+    }
   }
 
   ul {
