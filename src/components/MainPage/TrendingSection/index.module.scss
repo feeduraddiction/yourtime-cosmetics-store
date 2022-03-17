@@ -1,3 +1,5 @@
+@import 'styles/mediaSizes';
+
 .trendingSection {
   margin: 0 auto;
   text-align: center;
@@ -9,7 +11,27 @@
 }
 
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media(max-width: $tablet-horizontal) {
+  .products {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media(max-width: $tablet-vertical) {
+  .products {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media(max-width: $mobile) {
+  .products {
+    grid-template-columns: auto;
+  }
 }

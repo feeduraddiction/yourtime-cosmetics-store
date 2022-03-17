@@ -15,7 +15,8 @@ export interface goodsPropsTypes {
   }[];
 }
 
-const Home: NextPage<goodsPropsTypes> = ({goods}) => {
+const Home: NextPage<goodsPropsTypes> = ({ goods }) => {
+
   return (
     <div className={styles.container}>
       <Head>

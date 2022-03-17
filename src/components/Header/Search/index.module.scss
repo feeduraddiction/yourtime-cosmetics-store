@@ -1,71 +1,8 @@
-@import "styles/colors";
-
 .search {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  animation: opacity 0.6s ease;
-  // max-width: 300px;
-
-  input {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid $black;
-    height: 40px;
-    margin: 0 15px;
-    background-color: transparent;
-    // max-width: 300px;
-  }
-  input[type="text"] {
-    font-size: 20px;
-  }
-
-  svg:hover {
-    fill: $black;
-    cursor: default;
-  }
-
-  button {
-    position: relative;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: 100;
-    font-family: sans-serif;
-
-    .close {
-      position: absolute;
-      left: 5px;
-      top: -15px;
-      width: 32px;
-      height: 32px;
-    }
-    .close:before, .close:after {
-      position: absolute;
-      left: 5px;
-      content: ' ';
-      height: 33px;
-      width: 2px;
-      background-color: #333;
-    }
-    .close:before {
-      transform: rotate(45deg);
-    }
-    .close:after {
-      transform: rotate(-45deg);
-    }
-  }
-}
-
-@keyframes opacity {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+    max-width: 1120px;
+    margin: 0 auto;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
 }

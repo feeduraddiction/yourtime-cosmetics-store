@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import Button from "@UI/Button";
 import Backdrop from "./Backdrop";
@@ -21,7 +22,6 @@ export interface goodPropTypes {
 
 const Card = ({ good }: goodPropTypes) => {
   const router = useRouter();
-  console.log(good.type);
   return (
     <div
       className={classes.card}
@@ -29,7 +29,7 @@ const Card = ({ good }: goodPropTypes) => {
         router.push(`/catalogue/${pathToCategory(good.type)}/${good.id}`)
       }
     >
-      <Image src={good.image} alt="card" width="200px" height="200px" />
+      <img src={good.image} alt="card" width="200px" height="200px" />
       <CardText name={good.name} brand={good.brand} price={good.price} />
       <Button>Add to card</Button>
       <Backdrop />

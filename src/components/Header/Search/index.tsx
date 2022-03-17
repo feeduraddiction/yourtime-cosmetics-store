@@ -1,26 +1,17 @@
-import { SearchIcon } from "@assets/svgs/NavIcons";
-import {
-  activateSearchAction,
-  selectSearchActive,
-} from "@store/slices/searchSlice";
-import { useDispatch, useSelector } from "react-redux";
+import SearchInput from "./SearchInput";
+import SearchResults from "./SearchResults";
+
 import classes from "./index.module.scss";
+import { useSelector } from "react-redux";
+import { selectSearchInput } from "@store/slices/searchSlice";
 
 const Search = () => {
-  const dispatch = useDispatch();
-  const isSearchActive = useSelector(selectSearchActive);
-  const closeSearchHandler = () => {
-    dispatch(activateSearchAction());
-    document.body.classList.remove("scroll-lock");
-  };
+const searchInput = useSelector(selectSearchInput);
 
   return (
-    <div className={`${classes["search"]} ${!isSearchActive && classes.hide}`}>
-      <SearchIcon />
-      <input type="text" placeholder="Search for cosmetics..." />
-      <button onClick={closeSearchHandler}>
-        <span className={classes.close}></span>
-      </button>
+    <div className={classes.search}>
+      <SearchInput />
+      {searchInput && <SearchResults />}
     </div>
   );
 };
