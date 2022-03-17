@@ -28,7 +28,7 @@ const GoodDescriptionCart = ({ price }: { price: number }) => {
         </div>
         <h3>Price: ${counter * price}</h3>
       </div>
-      <Button>Add to cart</Button>Ы
+      <Button>Add to cart</Button>
     </div>
   );
 };

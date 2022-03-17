@@ -7,7 +7,6 @@ const NewsSection = () => {
   return (
     <section className={classes.newsSection}>
       <NewsSectionContent />
-      <Counter/>
     </section>
   );
 };
