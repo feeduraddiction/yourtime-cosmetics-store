@@ -1,10 +1,12 @@
-import HeroSectionContent from "./HeroSectionContent"
-import classes from './index.module.scss';
+import HeroSectionContent from "./HeroSectionContent";
+import classes from "./index.module.scss";
 
-const HeroSection = () => {
-    return <section className={classes.heroSection}>
-        <HeroSectionContent/>
+const HeroSection = ({ title }: { title: string }) => {
+  return (
+    <section className={classes.heroSection}>
+      <HeroSectionContent title={title} />
     </section>
-}
+  );
+};
 
 export default HeroSection;

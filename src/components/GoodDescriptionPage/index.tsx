@@ -1,4 +1,4 @@
-import { goodDataPropTypes } from "pages/[goodID]";
+import { goodDataPropTypes } from "pages/catalogue/[category]/[goodID]";
 import GoodDescriptionSection from "./GoodDescriptionSection";
 
 const GoodDescriptionPage = ({goodData}: goodDataPropTypes) => {

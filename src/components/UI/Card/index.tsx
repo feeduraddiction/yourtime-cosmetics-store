@@ -5,6 +5,7 @@ import CardText from "./CardText";
 
 import classes from "./index.module.scss";
 import { useRouter } from "next/router";
+import { pathToCategory } from "@assets/functions";
 
 export interface goodPropTypes {
   key?: string;
@@ -14,14 +15,20 @@ export interface goodPropTypes {
     brand: string;
     image: string;
     price: number;
+    type: string;
   };
 }
 
 const Card = ({ good }: goodPropTypes) => {
-const router = useRouter();
-
+  const router = useRouter();
+  console.log(good.type);
   return (
-    <div  className={classes.card}  onClick={() => {router.push(`/${good.id}`)}}>
+    <div
+      className={classes.card}
+      onClick={() =>
+        router.push(`/catalogue/${pathToCategory(good.type)}/${good.id}`)
+      }
+    >
       <Image src={good.image} alt="card" width="200px" height="200px" />
       <CardText name={good.name} brand={good.brand} price={good.price} />
       <Button>Add to card</Button>

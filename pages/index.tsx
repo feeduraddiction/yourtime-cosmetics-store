@@ -11,6 +11,7 @@ export interface goodsPropsTypes {
     name: string;
     price: number;
     image: string;
+    type: string;
   }[];
 }
 
@@ -48,6 +49,7 @@ export async function getStaticProps() {
           id: good._id.toString(),
           image: good.image,
           price: good.price,
+          type: good.type,
         };
       }),
     },

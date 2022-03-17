@@ -12,11 +12,11 @@ export interface goodDataPropTypes {
     price: number;
     description: string;
     image: string;
+    type: string;
   };
 }
 
 const GoodDescription: NextPage<goodDataPropTypes> = ({ goodData }) => {
-  console.log(goodData + ":description");
   return <GoodDescriptionPage goodData={goodData} />;
 };
 
@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const goodsCollection = db.collection("yourtime");
 
   const goods = await goodsCollection
-    .find({}, { projection: { _id: 1 } })
+    .find({}, { projection: { _id: 1, type: 1 } })
     .toArray();
   client.close();
 
@@ -37,6 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: "blocking",
     paths: goods.map((good) => ({
       params: {
+        category: good.type,
         goodID: good._id.toString(),
       },
     })),
@@ -73,6 +74,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         image: selectedGood?.image,
         price: selectedGood?.price,
         description: selectedGood?.description,
+        type: selectedGood?.type,
       },
     },
   };

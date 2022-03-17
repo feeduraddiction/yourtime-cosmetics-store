@@ -6,7 +6,7 @@ import HeroSection from "./HeroSection";
 const CataloguePage = ({goods}:goodsPropsTypes) => {
   return (
     <main>
-      <HeroSection />
+      <HeroSection title="Catalogue"/>
       <CategoriesSection/>
       <TrendingSection goods={goods}/>
     </main>

@@ -3,9 +3,8 @@ import { NextPage } from "next";
 import { MongoClient } from "mongodb";
 import { goodsPropsTypes } from "pages";
 
-const Catalogue: NextPage<goodsPropsTypes>  = ({goods}) => {
-  console.log(goods);
-  return <CataloguePage goods={goods}  />;
+const Catalogue: NextPage<goodsPropsTypes> = ({ goods }) => {
+  return <CataloguePage goods={goods} />;
 };
 
 export async function getStaticProps() {
@@ -29,6 +28,7 @@ export async function getStaticProps() {
           id: good._id.toString(),
           image: good.image,
           price: good.price,
+          type: good.type,
         };
       }),
     },
