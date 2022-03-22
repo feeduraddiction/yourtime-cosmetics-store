@@ -25,14 +25,12 @@ const SearchResults = () => {
   const searchInput = useSelector(selectSearchInput);
 
   useEffect(() => {
-    fetch("api/goods")
+    fetch(`${window.location.origin}/api/goods`)
       .then((res) => res.json())
       .then((data) => {
         setFetchedData(data);
       });
   }, []);
-
-  console.log('v1' + fetchedData);
 
   const filteredData = fetchedData
     .filter((element) =>
