@@ -9,7 +9,6 @@ const SearchBtn = () => {
   const switchSearchHandler = () => {
     dispatch(activateSearchAction());
     document.body.classList.add('scroll-lock');
-    document.getElementsByTagName( 'html' )[0].classList.add('show-bar');
   };
 
   return (
