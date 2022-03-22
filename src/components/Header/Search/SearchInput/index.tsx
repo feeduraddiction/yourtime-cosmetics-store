@@ -18,7 +18,6 @@ const SearchInput = () => {
   };
 
   const searchHandler = (e:any) => {
-      console.log(e.target.value)
     dispatch(searchInputAction(e.target.value));
     e.preventDefault();
   };

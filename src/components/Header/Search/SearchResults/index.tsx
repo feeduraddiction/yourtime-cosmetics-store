@@ -21,18 +21,20 @@ export interface goodsPropTypes {
 const SearchResults = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [data, setData] = useState<goodsPropTypes[]>([]);
+  const [fetchedData, setFetchedData] = useState<goodsPropTypes[]>([]);
   const searchInput = useSelector(selectSearchInput);
 
   useEffect(() => {
-    fetch("https://yourtime-cosmetics-store.vercel.app/api/goods")
+    fetch("api/goods")
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setFetchedData(data);
       });
   }, []);
 
-  const filteredData = data
+  console.log('v1' + fetchedData);
+
+  const filteredData = fetchedData
     .filter((element) =>
       element.name.toLowerCase().includes(searchInput.toLocaleLowerCase())
     )
