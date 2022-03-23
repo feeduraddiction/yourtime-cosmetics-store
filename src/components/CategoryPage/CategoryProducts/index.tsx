@@ -1,7 +1,7 @@
-import { goodsPropsTypes } from "pages";
+import { goodsPropTypes } from "@assets/types";
 import Goods from "@components/MainPage/TrendingSection/Goods";
 
-const CategoryProducts = ({ goods }: goodsPropsTypes) => {
+const CategoryProducts = ({ goods }: goodsPropTypes) => {
   return (
     <section>
       <Goods goods={goods} />
