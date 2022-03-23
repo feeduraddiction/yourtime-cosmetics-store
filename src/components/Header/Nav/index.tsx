@@ -1,19 +1,13 @@
 import { CartIcon, PersonIcon } from "@assets/svgs/NavIcons";
 import classes from "../index.module.scss";
+import CartBtn from "./CartBtn";
 import SearchBtn from "./SearchBtn";
 
 const Nav = () => {
   return (
     <ul className={classes.nav}>
       <SearchBtn />
-      <li>
-        <div className={classes.cart}>
-          <CartIcon />
-          <div className={classes.cartCounter}>
-            <p>15</p>
-          </div>
-        </div>
-      </li>
+      <CartBtn />
       <li>
         <PersonIcon />
       </li>

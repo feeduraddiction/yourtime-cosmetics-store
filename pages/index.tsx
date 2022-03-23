@@ -3,19 +3,10 @@ import { MongoClient } from "mongodb";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import MainPage from "@components/MainPage";
+import { goodsPropTypes } from "@assets/types";
 
-export interface goodsPropsTypes {
-  goods: {
-    brand: string;
-    id: string;
-    name: string;
-    price: number;
-    image: string;
-    type: string;
-  }[];
-}
 
-const Home: NextPage<goodsPropsTypes> = ({ goods }) => {
+const Home: NextPage<goodsPropTypes> = ({ goods }) => {
 
   return (
     <div className={styles.container}>

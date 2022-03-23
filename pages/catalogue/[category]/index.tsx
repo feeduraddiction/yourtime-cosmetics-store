@@ -1,22 +1,13 @@
 import CategoryPage from "@components/CategoryPage";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MongoClient } from "mongodb";
 import { ParsedUrlQuery } from "querystring";
-export interface categoryDataPropTypes {
-  categoryData: {
-    brand: string;
-    id: string;
-    name: string;
-    price: number;
-    image: string;
-    type: string;
-  }[]
-}
+import { goodsPropTypes } from "@assets/types";
 
-const Category = ({categoryData}:categoryDataPropTypes) => {
+const Category: NextPage<goodsPropTypes> = ({ goods }) => {
   return (
     <div>
-      <CategoryPage categoryData={categoryData} />
+      <CategoryPage goods={goods} />
     </div>
   );
 };
@@ -31,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   });
 
   return {
-    fallback: false,
+    fallback: "blocking",
     paths,
   };
 };
@@ -62,7 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      categoryData: selectedCategory.map((category) => {
+      goods: selectedCategory.map((category) => {
         return {
           brand: category.brand,
           name: category.name,

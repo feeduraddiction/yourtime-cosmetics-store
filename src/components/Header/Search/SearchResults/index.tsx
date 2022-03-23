@@ -8,20 +8,12 @@ import SearchResult from "./SearchResult";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { pathToCategory } from "@assets/functions";
-
-export interface goodsPropTypes {
-  brand: string;
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  type: string;
-}
+import { goodPropTypes } from "@assets/types";
 
 const SearchResults = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [fetchedData, setFetchedData] = useState<goodsPropTypes[]>([]);
+  const [fetchedData, setFetchedData] = useState<goodPropTypes[]>([]);
   const searchInput = useSelector(selectSearchInput);
 
   useEffect(() => {

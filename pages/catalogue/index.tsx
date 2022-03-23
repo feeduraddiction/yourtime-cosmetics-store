@@ -1,9 +1,10 @@
 import CataloguePage from "@components/CataloguePage";
 import { NextPage } from "next";
 import { MongoClient } from "mongodb";
-import { goodsPropsTypes } from "pages";
+import { goodsPropTypes } from "@assets/types";
 
-const Catalogue: NextPage<goodsPropsTypes> = ({ goods }) => {
+
+const Catalogue: NextPage<goodsPropTypes> = ({ goods }) => {
   return <CataloguePage goods={goods} />;
 };
 

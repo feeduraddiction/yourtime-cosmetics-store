@@ -1,7 +1,7 @@
 import Card from "@components/UI/Card";
-import { goodsPropTypes } from "..";
 import classes from "./index.module.scss";
-import Goods from "./Products";
+import Goods from "./Goods";
+import { goodsPropTypes } from "@assets/types";
 
 const TrendingSection = ({ goods }: goodsPropTypes) => {
   const trendingGoods = goods.slice(1, 5);

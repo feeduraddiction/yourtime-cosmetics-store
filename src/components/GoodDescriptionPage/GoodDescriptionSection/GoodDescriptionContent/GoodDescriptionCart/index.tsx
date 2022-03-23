@@ -15,6 +15,8 @@ const GoodDescriptionCart = ({ price }: { price: number }) => {
     setCounter(counter + 1)
   }
 
+  
+
   return (
     <div className={classes.cart}>
       <div className={classes.total}>

@@ -1,4 +1,4 @@
-import { goodDataPropTypes } from "pages/catalogue/[category]/[goodID]";
+import { goodDataPropTypes } from "@assets/types";
 import GoodDescriptionContent from "./GoodDescriptionContent";
 
 const GoodDescriptionSection = ({goodData}:goodDataPropTypes) => {

@@ -1,8 +1,8 @@
-import { goodsPropsTypes } from 'pages';
+import { goodsPropTypes } from '@assets/types';
 import classes from '../index.module.scss';
 import Card from '@components/UI/Card';
 
-const Goods = ({goods}:goodsPropsTypes) => {
+const Goods = ({goods}:goodsPropTypes) => {
   return (
     <div className={classes.products}>
       {goods.map((good) => (

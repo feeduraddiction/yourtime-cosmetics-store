@@ -20,19 +20,30 @@ export default async function handler(
 
   const db = client.db();
 
-  const goodsCollection = db.collection("yourtime");
+  if (req.method === "GET") {
+    const goodsCollection = db.collection("yourtime");
 
-  const recievedGoods = await goodsCollection.find().toArray();
+    const recievedGoods = await goodsCollection.find().toArray();
 
-  const goods = recievedGoods.map((good) => {
-    return {
-      brand: good.brand,
-      name: good.name,
-      id: good._id.toString(),
-      image: good.image,
-      price: good.price,
-      type: good.type,
-    };
-  });
-  res.status(200).json(goods);
+    const goods = recievedGoods.map((good) => {
+      return {
+        brand: good.brand,
+        name: good.name,
+        id: good._id.toString(),
+        image: good.image,
+        price: good.price,
+        type: good.type,
+      };
+    });
+
+    res.status(200).json(goods);
+  } else if (req.method === "POST") {
+    const sessionCartCollection = db.collection("session-cart");
+
+    const data = req.body;
+
+    const result = await sessionCartCollection.insertOne(data);
+    client.close();
+    res.status(201);
+  }
 }

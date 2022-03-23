@@ -1,12 +1,12 @@
+import { goodsPropTypes } from "@assets/types";
 import HeroSection from "@components/CataloguePage/HeroSection";
-import { categoryDataPropTypes } from "pages/catalogue/[category]";
 import CategoryProducts from "./CategoryProducts";
 
-const CategoryPage = ({ categoryData }: categoryDataPropTypes) => {
+const CategoryPage = ({ goods }: goodsPropTypes) => {
   return (
     <main>
-      <HeroSection title={categoryData[0].type} />
-      <CategoryProducts goods={categoryData}/>
+      <HeroSection title={goods[0].type} />
+      <CategoryProducts goods={goods}/>
     </main>
   );
 };

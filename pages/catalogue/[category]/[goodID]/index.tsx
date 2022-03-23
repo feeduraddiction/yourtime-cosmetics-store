@@ -3,21 +3,18 @@ import { NextPage } from "next";
 import { MongoClient, ObjectId } from "mongodb";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
+import { goodPropTypes } from "@assets/types";
 
-export interface goodDataPropTypes {
-  goodData: {
-    id: string;
-    name: string;
-    brand: string;
-    price: number;
-    description: string;
-    image: string;
-    type: string;
-  };
+export interface goodDescriptionPropTypes {
+  goodData: goodPropTypes;
+  goods: goodPropTypes[];
 }
 
-const GoodDescription: NextPage<goodDataPropTypes> = ({ goodData }) => {
-  return <GoodDescriptionPage goodData={goodData} />;
+const GoodDescription: NextPage<goodDescriptionPropTypes> = ({
+  goodData,
+  goods,
+}) => {
+  return <GoodDescriptionPage goodData={goodData} goods={goods} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -63,6 +60,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     _id: new ObjectId(goodID),
   });
 
+  const recommendedGoods = await goodsCollection.find().toArray();
+
   client.close();
 
   return {
@@ -76,6 +75,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
         description: selectedGood?.description,
         type: selectedGood?.type,
       },
+      goods: recommendedGoods.map((good) => ({
+        id: good._id.toString(),
+        name: good.name,
+        brand: good.brand,
+        image: good.image,
+        price: good.price,
+        description: good.description,
+        type: good.type,
+      })),
     },
   };
 };

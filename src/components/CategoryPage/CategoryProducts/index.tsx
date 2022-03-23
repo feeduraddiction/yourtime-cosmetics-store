@@ -1,5 +1,5 @@
 import { goodsPropsTypes } from "pages";
-import Goods from "@components/MainPage/TrendingSection/Products";
+import Goods from "@components/MainPage/TrendingSection/Goods";
 
 const CategoryProducts = ({ goods }: goodsPropsTypes) => {
   return (
