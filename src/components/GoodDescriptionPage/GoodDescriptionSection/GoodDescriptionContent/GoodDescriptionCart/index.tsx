@@ -1,10 +1,15 @@
+import { goodDataPropTypes } from "@assets/types";
 import Button from "@components/UI/Button";
 import Counter from "@components/UI/Counter";
+import { addToCartAction } from "@store/slices/cartSlice";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import classes from "./index.module.scss";
 
-const GoodDescriptionCart = ({ price }: { price: number }) => {
+const GoodDescriptionCart = ({ goodData }: goodDataPropTypes) => {
+  const dispatch = useDispatch();
+
   const [counter, setCounter] = useState(1);
 
   const decrementHandler = () => {
@@ -12,10 +17,17 @@ const GoodDescriptionCart = ({ price }: { price: number }) => {
   };
 
   const incrementHandler = () => {
-    setCounter(counter + 1)
-  }
+    setCounter(counter + 1);
+  };
 
-  
+  const cartGood = {
+    ...goodData,
+    quantity: counter,
+  };
+
+  const addToCartHandler = () => {
+    dispatch(addToCartAction(cartGood));
+  };
 
   return (
     <div className={classes.cart}>
@@ -28,9 +40,9 @@ const GoodDescriptionCart = ({ price }: { price: number }) => {
             counter={counter}
           />
         </div>
-        <h3>Price: ${counter * price}</h3>
+        <h3>Price: ${counter * goodData.price}</h3>
       </div>
-      <Button>Add to cart</Button>
+      <Button onClick={addToCartHandler}>Add to cart</Button>
     </div>
   );
 };

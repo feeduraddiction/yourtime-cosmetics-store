@@ -8,7 +8,7 @@ export interface goodPropTypes { //types for all data of one object from DB
   id: string;
 }
 
-export interface cartPropTypes extends goodsPropTypes {
+export interface cartPropTypes extends goodPropTypes {
   quantity: number;
 }
 

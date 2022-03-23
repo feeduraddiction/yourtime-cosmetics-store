@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { pathToCategory } from "@assets/functions";
 import { goodPropTypes } from "@assets/types";
 import { useDispatch } from "react-redux";
-import { AddToCartAction } from "@store/slices/cartSlice";
+import { addToCartAction } from "@store/slices/cartSlice";
 
 export interface goodCardPropTypes {
   key?: string;
@@ -24,21 +24,20 @@ const Card = ({ good }: goodCardPropTypes) => {
     quantity: 1,
   };
 
-  const addToCartHandler = async () => {
-    dispatch(AddToCartAction(cartGood));
+  const addToCartHandler = () => {
+    dispatch(addToCartAction(cartGood));
   };
 
   return (
-    <div
-      className={classes.card}
-      onClick={() =>
-        router.push(`/catalogue/${pathToCategory(good.type)}/${good.id}`)
-      }
-    >
+    <div className={classes.card}>
       <img src={good.image} alt="card" width="200px" height="200px" />
       <CardText name={good.name} brand={good.brand} price={good.price} />
       <Button onClick={addToCartHandler}>Add to card</Button>
-      <Backdrop />
+      <Backdrop
+        onClick={() =>
+          router.push(`/catalogue/${pathToCategory(good.type)}/${good.id}`)
+        }
+      />
     </div>
   );
 };

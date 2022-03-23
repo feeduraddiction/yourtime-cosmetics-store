@@ -8,6 +8,7 @@ type Data = {
   price: number;
   image: string;
   type: string;
+  quantity: number;
 }[];
 
 export default async function handler(
@@ -32,6 +33,7 @@ export default async function handler(
       image: good.image,
       price: good.price,
       type: good.type,
+      quantity: good.quantity,
     };
   });
   res.status(200).json(goods);

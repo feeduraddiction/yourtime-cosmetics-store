@@ -1,7 +1,7 @@
-import classes from '../index.module.scss';
+import classes from "../index.module.scss";
 
-const Backdrop = () => {
-    return <div className={classes.backdrop}></div>
-}
+const Backdrop = ({ onClick }: { onClick: (e: React.MouseEvent) => void }) => {
+  return <div className={classes.backdrop} onClick={onClick}></div>;
+};
 
 export default Backdrop;

@@ -15,7 +15,7 @@ const GoodDescriptionContent = ({ goodData }: goodDataPropTypes) => {
           description={goodData.description}
           brand={goodData.brand}
         />
-        <GoodDescriptionCart price={goodData.price}/>
+        <GoodDescriptionCart goodData={goodData}/>
       </div>
     </div>
   );
