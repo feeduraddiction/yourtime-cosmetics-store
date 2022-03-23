@@ -1,9 +1,9 @@
 import CategoriesSection from "@components/MainPage/CategoriesSection";
 import TrendingSection from "@components/MainPage/TrendingSection";
-import { goodsPropsTypes } from "pages";
+import { goodsPropTypes } from "@assets/types";
 import HeroSection from "./HeroSection";
 
-const CataloguePage = ({goods}:goodsPropsTypes) => {
+const CataloguePage = ({goods}:goodsPropTypes) => {
   return (
     <main>
       <HeroSection title="Catalogue"/>
