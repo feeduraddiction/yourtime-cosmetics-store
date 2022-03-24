@@ -1,0 +1,51 @@
+@import "styles/mediaSizes";
+
+.content {
+  display: grid;
+  grid-template-columns: 35% 30% 20% 15%;
+  grid-template-areas: "image text counter price";
+  img {
+    width: 70%;
+  }
+
+  .image {
+    grid-area: image;
+  }
+  .text {
+    grid-area: text;
+  }
+  .counter {
+    grid-area: counter;
+  }
+  .price {
+    grid-area: price;
+  }
+
+  .image,
+  .text,
+  .counter,
+  .price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media (max-width: $tablet-vertical) {
+  .content {
+    img {
+      width: 100%;
+    }
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 115px 115px;
+    grid-template-areas:
+      "image text text"
+      "image counter price";
+  }
+}
+
+@media (max-width: $mobile) {
+  .content {
+    grid-template-columns: 40% 40% 20%;
+  }
+}

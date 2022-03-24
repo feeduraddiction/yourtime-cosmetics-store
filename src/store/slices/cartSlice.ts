@@ -24,10 +24,31 @@ const cartSlice = createSlice({
         state.cart.push(action.payload);
       }
     },
+    incrementCart(state, action: PayloadAction<string>) {
+      const isExist = state.cart.find((item) => item.id === action.payload);
+      if (isExist) {
+        isExist.quantity++;
+      }
+    },
+    decrementCart(state, action: PayloadAction<string>) {
+      const isExist = state.cart.find((item) => item.id === action.payload);
+      if (isExist) {
+        if (isExist.quantity < 2) {
+          isExist.quantity = 1;
+        } else {
+          isExist.quantity--;
+        }
+      }
+    },
+    removeFromCart(state, action: PayloadAction<string>) {
+      state.cart = state.cart.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
 export const addToCartAction = cartSlice.actions.addToCart;
+export const removeFromCartAction = cartSlice.actions.removeFromCart;
+export const { decrementCart, incrementCart } = cartSlice.actions;
 
 export const selectCart = (state: RootState) => state.cart.cart;
 

@@ -1,0 +1,42 @@
+@import "styles/colors";
+
+.item {
+  border-bottom: 2px solid $black;
+  padding: 50px 0;
+  position: relative;
+
+  .closeButton {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 100;
+    font-family: sans-serif;
+
+    .close {
+      position: absolute;
+      left: 5px;
+      top: -15px;
+      width: 32px;
+      height: 32px;
+    }
+    .close:before,
+    .close:after {
+      position: absolute;
+      left: 5px;
+      content: " ";
+      height: 24px;
+      width: 2px;
+      background-color: #333;
+    }
+    .close:before {
+      transform: rotate(45deg);
+    }
+    .close:after {
+      transform: rotate(-45deg);
+    }
+  }
+}

@@ -24,6 +24,10 @@ export interface cartGoodsPropTypes {
   cartGoods: cartPropTypes[];
 }
 
+export interface cartGoodPropTypes {
+  cartGood: cartPropTypes;
+}
+
 
 
 

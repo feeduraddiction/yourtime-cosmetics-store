@@ -19,10 +19,11 @@ export const SearchIcon = ({ onClick }: iconPropTypes) => {
   );
 };
 
-export const CartIcon = () => {
+export const CartIcon = ({ onClick }: iconPropTypes) => {
   return (
     <svg
       className={classes.iconNav}
+      onClick={onClick}
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -33,10 +34,11 @@ export const CartIcon = () => {
   );
 };
 
-export const PersonIcon = () => {
+export const PersonIcon = ({ onClick }: iconPropTypes) => {
   return (
     <svg
       className={classes.iconNav}
+      onClick={onClick}
       width="16"
       height="16"
       viewBox="0 0 16 16"
