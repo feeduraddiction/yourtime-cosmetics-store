@@ -1,0 +1,28 @@
+@import "styles/colors";
+@import "styles/mediaSizes";
+
+.login {
+  position: absolute;
+  height: 250px;
+  width: 350px;
+  background-color: $white;
+  padding: 0 25px 0 25px;
+  top: 100px;
+  right: 0;
+  border: 1px solid $primary-light;
+  border-radius: 12px;
+  p {
+    margin-top: 15px;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+@media (max-width: $mobile) {
+  .login {
+    width: 100%;
+  }
+}

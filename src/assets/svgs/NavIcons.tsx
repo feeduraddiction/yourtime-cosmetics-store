@@ -1,3 +1,5 @@
+import { selectLoginWindowActive } from "@store/slices/loginWindowSlice";
+import { useSelector } from "react-redux";
 import classes from "../../../styles/icons.module.scss";
 
 export interface iconPropTypes {
@@ -35,9 +37,12 @@ export const CartIcon = ({ onClick }: iconPropTypes) => {
 };
 
 export const PersonIcon = ({ onClick }: iconPropTypes) => {
+  const isLoginWindowActive = useSelector(selectLoginWindowActive);
   return (
     <svg
-      className={classes.iconNav}
+      className={`${classes["iconNav"]} ${
+        isLoginWindowActive && classes.active
+      }`}
       onClick={onClick}
       width="16"
       height="16"
