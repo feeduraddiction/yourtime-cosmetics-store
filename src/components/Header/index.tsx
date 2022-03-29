@@ -2,10 +2,9 @@ import { selectLoginWindowActive } from "@store/slices/loginWindowSlice";
 import { selectSearchActive } from "@store/slices/searchSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import classes from "./index.module.scss";
-import Login from "./Login";
+import UserWindow from "./UserWindow";
 import Nav from "./Nav";
 import Search from "./Search";
 
@@ -28,7 +27,7 @@ const Header = () => {
             }}
           />
           <Nav />
-          {isLoginWindowActive && <Login />}
+          {isLoginWindowActive && <UserWindow />}
         </div>
       )}
       {isSearchActive && <Search />}

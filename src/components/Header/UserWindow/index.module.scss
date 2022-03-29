@@ -1,7 +1,7 @@
 @import "styles/colors";
 @import "styles/mediaSizes";
 
-.login {
+.userWindow {
   position: absolute;
   height: 250px;
   width: 350px;
@@ -22,7 +22,7 @@
 }
 
 @media (max-width: $mobile) {
-  .login {
+  .userWindow {
     width: 100%;
   }
 }
