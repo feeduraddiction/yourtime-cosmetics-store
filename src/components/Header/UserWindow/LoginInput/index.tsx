@@ -1,7 +1,7 @@
 import classes from "./index.module.scss";
 import Button from "@components/UI/Button";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authorizeUserAction } from "@store/slices/userSlice";
 
 const LoginInput = () => {
@@ -26,43 +26,51 @@ const LoginInput = () => {
 
   const loginHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (username.trim().length === 0 && password.trim().length === 0) {
       setInvalidInput(true);
       return;
     }
-    await fetch("api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (!Object.keys(data).length) {
-          setInvalidInput(true);
-        } else {
-          dispatch(
-            authorizeUserAction({
-              username: data.username,
-              isAdmin: data.isAdmin,
-            })
-          );
-        }
+
+    try {
+      const login = async () => {
+        
+      }
+      const res = await fetch("api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
       });
+
+      const data = res.json();
+
+      dispatch(
+        authorizeUserAction({
+          username: (await data).username,
+          isAdmin: (await data).isAdmin,
+          email: (await data).email,
+          metadata: (await data).metadata,
+        })
+      );
+    } catch (error) {
+      setInvalidInput(true);
+    }
   };
 
   return (
-    <form onSubmit={loginHandler} className={`${classes["input"]} ${invalidInput && classes.invalid}`}>
+    <form
+      onSubmit={loginHandler}
+      className={`${classes["input"]} ${invalidInput && classes.invalid}`}
+    >
       <input type="text" placeholder="Login" onChange={usernameChangeHandler} />
       <input
         type="password"
         placeholder="Password"
         onChange={passwordChangeHandler}
       />
-      <Button type="submit">
-        Log in
-      </Button>
+      <Button type="submit">Log in</Button>
     </form>
   );
 };

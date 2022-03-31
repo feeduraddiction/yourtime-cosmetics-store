@@ -1,17 +1,23 @@
 import Button from "@components/UI/Button";
-import React, { useRef, useState } from "react";
+import { selectCart } from "@store/slices/cartSlice";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
+import { authorizeUserAction } from "@store/slices/userSlice";
 
 const SignUpForm = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [reEnteredPassword, setReEnteredPassword] = useState("");
-  //   const [invalidUsername, setInvalidUsername] = useState(false);
-  //   const [invalidEmail, setInvalidEmail] = useState(false);
-  //   const [invalidPassword, setInvalidPassword] = useState(false);
   const [invalidReEnteredPassword, setInvalidReEnteredPassword] =
     useState(false);
+
+  const cart = useSelector(selectCart);
 
   const changeUsernameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -39,13 +45,32 @@ const SignUpForm = () => {
       setInvalidReEnteredPassword(true);
       return;
     }
-      const res = await fetch("api/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password, email }),
-      }); 
+    const res = await fetch("api/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        email,
+        metadata: { cart: cart },
+      }),
+    });
+    const data = await res.json();
+
+    if (res.status === 200) {
+    
+      dispatch(
+        authorizeUserAction({
+          username: (await data).username,
+          isAdmin: (await data).isAdmin,
+          email: (await data).email,
+          metadata: (await data).metadata,
+        })
+      );
+      router.push("/");
+    }
   };
 
   return (

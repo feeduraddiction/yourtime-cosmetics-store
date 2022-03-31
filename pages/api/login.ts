@@ -1,10 +1,19 @@
+import CryptoJS from "crypto-js";
 import { MongoClient } from "mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  username: string;
-  password: string;
-  isAdmin: boolean;
+  username?: string;
+  email?: string;
+  isAdmin?: boolean;
+  error?: string;
+  metada?: {}
+};
+
+declare var process: {
+  env: {
+    PASS_SEC: string;
+  };
 };
 
 export default async function handler(
@@ -19,12 +28,41 @@ export default async function handler(
 
   const db = client.db();
   const usersCollection = db.collection("users");
-  const recievedUser = await usersCollection.findOne({ username, password });
-  const user = {
-    username: recievedUser?.username,
-    password: recievedUser?.password,
-    isAdmin: recievedUser?.isAdmin,
-  };
-  client.close();
-  res.status(200).json(user);
+
+  try {
+    const recievedUser = await usersCollection.findOne({
+      username,
+    });
+
+    console.log("user " + recievedUser);
+
+    if (recievedUser === null) {
+      res.status(401).json({ error: "Wrong credentials!" });
+      console.log('out of fnc');
+      return;
+    }
+
+    const hashedPassword = CryptoJS.AES.decrypt(
+      recievedUser?.password,
+      process.env.PASS_SEC
+    );
+    const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+
+    if (originalPassword !== password) {
+      res.status(401).json({ error: "Wrong credentials!" });
+      return;
+    }
+
+    const user = {
+      username: recievedUser?.username,
+      email: recievedUser?.email,
+      isAdmin: recievedUser?.isAdmin,
+      metadata: recievedUser?.metadata,
+    };
+    client.close();
+    console.log(user);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ error: "Error occured" + error });
+  }
 }

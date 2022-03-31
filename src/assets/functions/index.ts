@@ -5,3 +5,7 @@ export function pathToCategory(name: string) {
 export function upperCaseOfCategory(name: string) {
   return name.replace("for", "For ");
 }
+
+export async function login () {
+  
+}

@@ -6,6 +6,7 @@ interface userState {
     username: string;
     email: string;
     isAdmin: boolean;
+    metadata: {};
   };
 }
 
@@ -13,6 +14,8 @@ const initialState = {
   user: {
     username: "",
     isAdmin: false,
+    email: "",
+    metadata: {},
   },
 } as userState;
 
@@ -22,14 +25,24 @@ const userSlice = createSlice({
   reducers: {
     authorizeUser(
       state,
-      action: PayloadAction<{ username: string; isAdmin: boolean }>
+      action: PayloadAction<{ username: string; isAdmin: boolean, email: string, metadata: {} }>
     ) {
-      state.user.username = action.payload.username;
-      state.user.isAdmin = action.payload.isAdmin;
+      if (action.payload.isAdmin) {
+        state.user.username = action.payload.username;
+        state.user.isAdmin = action.payload.isAdmin;
+      } else {
+        state.user.username = action.payload.username;
+        state.user.isAdmin = action.payload.isAdmin;
+        state.user.email = action.payload.email;
+        state.user.metadata = action.payload.metadata;
+      }
     },
     logout(state) {
-      state.user.username = "";
-      state.user.isAdmin = false;
+      state.user.username = initialState.user.username;
+      state.user.email = initialState.user.email;
+      state.user.isAdmin = initialState.user.isAdmin;
+      state.user.metadata = initialState.user.metadata;
+
     },
   },
 });
