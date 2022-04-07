@@ -3,12 +3,18 @@ import classes from "./index.module.scss";
 import TotalPrice from "./TotalPrice";
 import { cartGoodsPropTypes } from "@assets/types";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { selectUser } from "@store/slices/userSlice";
 
 const CartContent = ({ cartGoods }: cartGoodsPropTypes) => {
   const router = useRouter();
-  const totalPrice = cartGoods.reduce((acc, curr) => {
-    return curr.price * curr.quantity + acc;
-  }, 0);
+  const user = useSelector(selectUser);
+
+  const totalPrice = !user.isAdmin
+    ? cartGoods.reduce((acc, curr) => {
+        return curr.price * curr.quantity + acc;
+      }, 0)
+    : 0;
 
   return (
     <div

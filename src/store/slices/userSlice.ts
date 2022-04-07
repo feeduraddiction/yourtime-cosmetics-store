@@ -1,21 +1,28 @@
+import { cartPropTypes } from "@assets/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 interface userState {
   user: {
+    id: string,
     username: string;
     email: string;
     isAdmin: boolean;
-    metadata: {};
+    metadata: {
+      cart: cartPropTypes[];
+    };
   };
 }
 
 const initialState = {
   user: {
+    id: "",
     username: "",
     isAdmin: false,
     email: "",
-    metadata: {},
+    metadata: {
+      cart: {},
+    },
   },
 } as userState;
 
@@ -25,25 +32,28 @@ const userSlice = createSlice({
   reducers: {
     authorizeUser(
       state,
-      action: PayloadAction<{ username: string; isAdmin: boolean, email: string, metadata: {} }>
+      action: PayloadAction<{
+        id: string,
+        username: string;
+        isAdmin: boolean;
+        email: string;
+        metadata: {
+          cart: cartPropTypes[];
+        };
+      }>
     ) {
       if (action.payload.isAdmin) {
         state.user.username = action.payload.username;
         state.user.isAdmin = action.payload.isAdmin;
       } else {
+        state.user.id = action.payload.id;
         state.user.username = action.payload.username;
         state.user.isAdmin = action.payload.isAdmin;
         state.user.email = action.payload.email;
-        state.user.metadata = action.payload.metadata;
+        state.user.metadata.cart = action.payload.metadata.cart;
       }
     },
-    logout(state) {
-      state.user.username = initialState.user.username;
-      state.user.email = initialState.user.email;
-      state.user.isAdmin = initialState.user.isAdmin;
-      state.user.metadata = initialState.user.metadata;
-
-    },
+    logout: () => initialState,
   },
 });
 

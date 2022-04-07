@@ -3,6 +3,10 @@ import Button from "@components/UI/Button";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authorizeUserAction } from "@store/slices/userSlice";
+import {
+  clearLocalCartAction,
+  updateCartAction,
+} from "@store/slices/cartSlice";
 
 const LoginInput = () => {
   const dispatch = useDispatch();
@@ -33,9 +37,7 @@ const LoginInput = () => {
     }
 
     try {
-      const login = async () => {
-        
-      }
+      const login = async () => {};
       const res = await fetch("api/login", {
         method: "POST",
         headers: {
@@ -48,12 +50,16 @@ const LoginInput = () => {
 
       dispatch(
         authorizeUserAction({
+          id: (await data).id,
           username: (await data).username,
           isAdmin: (await data).isAdmin,
           email: (await data).email,
-          metadata: (await data).metadata,
+          metadata: {
+            cart: (await data).metadata.cart,
+          },
         })
       );
+      dispatch(updateCartAction((await data).metadata.cart));
     } catch (error) {
       setInvalidInput(true);
     }

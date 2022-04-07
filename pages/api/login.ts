@@ -3,6 +3,7 @@ import { MongoClient } from "mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
+  id?: string,
   username?: string;
   email?: string;
   isAdmin?: boolean;
@@ -33,9 +34,7 @@ export default async function handler(
     const recievedUser = await usersCollection.findOne({
       username,
     });
-
-    console.log("user " + recievedUser);
-
+    
     if (recievedUser === null) {
       res.status(401).json({ error: "Wrong credentials!" });
       console.log('out of fnc');
@@ -54,13 +53,13 @@ export default async function handler(
     }
 
     const user = {
+      id: recievedUser._id.toString(),
       username: recievedUser?.username,
       email: recievedUser?.email,
       isAdmin: recievedUser?.isAdmin,
       metadata: recievedUser?.metadata,
     };
     client.close();
-    console.log(user);
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ error: "Error occured" + error });

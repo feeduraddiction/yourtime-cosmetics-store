@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import { authorizeUserAction } from "@store/slices/userSlice";
+import { clearLocalCartAction } from "@store/slices/cartSlice";
 
 const SignUpForm = () => {
   const router = useRouter();
@@ -60,15 +61,17 @@ const SignUpForm = () => {
     const data = await res.json();
 
     if (res.status === 200) {
-    
       dispatch(
         authorizeUserAction({
           username: (await data).username,
           isAdmin: (await data).isAdmin,
           email: (await data).email,
-          metadata: (await data).metadata,
+          metadata: {
+            cart: (await data).metadata.cart,
+          },
         })
       );
+      dispatch(clearLocalCartAction());
       router.push("/");
     }
   };
