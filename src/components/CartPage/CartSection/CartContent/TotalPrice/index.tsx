@@ -1,10 +1,12 @@
 import Button from "@components/UI/Button";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import classes from "./index.module.scss";
 
 const TotalPrice = ({ totalPrice }: { totalPrice: number | never[] }) => {
-  const dispatch = useDispatch();
+  const router = useRouter();
   const proceedHandler = () => {
+    router.push('/order');
   };
   return (
     <div className={classes.totalPrice}>

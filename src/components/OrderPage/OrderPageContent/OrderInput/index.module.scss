@@ -1,0 +1,20 @@
+@import "styles/colors";
+
+.form {
+  input {
+    border: 1px solid $black;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 245px;
+    height: 40px;
+    margin-right: 14px;
+    padding-left: 8px;
+  }
+
+  #comment {
+    width: 500px;
+  }
+  input[type="text"] {
+    font-size: 16px;
+  }
+}

@@ -24,10 +24,9 @@ export default async function handler(
   const db = client.db();
 
   const usersCollection = db.collection("users");
-  const isGoodExists = await usersCollection.findOne({
+  const isGoodExists = await usersCollection.findOne({username,
     "metadata.cart.id": good.id,
   });
-  console.log("exists?: " + JSON.stringify(isGoodExists));
 
   if (isGoodExists) {
     const user = await usersCollection.updateOne(

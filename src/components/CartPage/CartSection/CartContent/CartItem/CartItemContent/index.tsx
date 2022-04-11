@@ -4,16 +4,25 @@ import Counter from "@components/UI/Counter";
 import { cartGoodPropTypes } from "@assets/types";
 
 import classes from "./index.module.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { incrementCart, decrementCart } from "@store/slices/cartSlice";
+import { selectUser } from "@store/slices/userSlice";
+import { updateCart } from "@assets/functions";
 
 const CartItemContent = ({ cartGood }: cartGoodPropTypes) => {
   const dispatch = useDispatch();
-  const decrementHandler = () => {
+  const currentUser = useSelector(selectUser);
+  const decrementHandler = async () => {
     dispatch(decrementCart(cartGood.id));
+    if (cartGood.quantity !== 1) {
+      const res = await updateCart(currentUser.username, -1, cartGood.id);
+    }
   };
-  const incrementHandler = () => {
+  const incrementHandler = async () => {
     dispatch(incrementCart(cartGood.id));
+    if (cartGood.quantity !== 1) {
+      const res = await updateCart(currentUser.username, 1, cartGood.id);
+    }
   };
   return (
     <div className={classes.content}>

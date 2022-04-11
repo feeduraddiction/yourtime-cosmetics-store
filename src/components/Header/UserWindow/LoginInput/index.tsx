@@ -7,6 +7,7 @@ import {
   clearLocalCartAction,
   updateCartAction,
 } from "@store/slices/cartSlice";
+import { api } from "@assets/functions";
 
 const LoginInput = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const LoginInput = () => {
 
     try {
       const login = async () => {};
-      const res = await fetch("api/login", {
+      const res = await fetch(api("login"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,6 +60,7 @@ const LoginInput = () => {
           },
         })
       );
+      dispatch(clearLocalCartAction());
       dispatch(updateCartAction((await data).metadata.cart));
     } catch (error) {
       setInvalidInput(true);

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import { authorizeUserAction } from "@store/slices/userSlice";
 import { clearLocalCartAction } from "@store/slices/cartSlice";
+import { stringify } from "querystring";
 
 const SignUpForm = () => {
   const router = useRouter();
@@ -63,6 +64,7 @@ const SignUpForm = () => {
     if (res.status === 200) {
       dispatch(
         authorizeUserAction({
+          id: (await data).id,
           username: (await data).username,
           isAdmin: (await data).isAdmin,
           email: (await data).email,
@@ -71,7 +73,6 @@ const SignUpForm = () => {
           },
         })
       );
-      dispatch(clearLocalCartAction());
       router.push("/");
     }
   };
