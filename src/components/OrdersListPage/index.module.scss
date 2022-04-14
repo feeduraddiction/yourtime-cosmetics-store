@@ -1,0 +1,15 @@
+.section {
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //   width: 600px;
+}
+
+@media (max-width: 540px) {
+  .section {
+    width: 100%;
+  }
+}

@@ -6,7 +6,7 @@ import CardText from "./CardText";
 
 import classes from "./index.module.scss";
 import { useRouter } from "next/router";
-import { pathToCategory } from "@assets/functions";
+import { insertGoodCart, pathToCategory } from "@assets/functions";
 import { goodPropTypes } from "@assets/types";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCartAction, selectCart } from "@store/slices/cartSlice";
@@ -28,13 +28,7 @@ const Card = ({ good }: goodCardPropTypes) => {
   const cart = useSelector(selectCart);
   const addToCartHandler = async () => {
     dispatch(addToCartAction(cartGood));
-    const res = fetch("api/insertGoodCart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username: currentUser.username, good: cartGood }),
-    });
+    const res = await insertGoodCart(currentUser.username, 1, cartGood);
   };
 
   return (

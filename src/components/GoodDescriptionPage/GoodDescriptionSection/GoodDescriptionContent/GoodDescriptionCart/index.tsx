@@ -1,15 +1,17 @@
+import { insertGoodCart } from "@assets/functions";
 import { goodDataPropTypes } from "@assets/types";
 import Button from "@components/UI/Button";
 import Counter from "@components/UI/Counter";
 import { addToCartAction } from "@store/slices/cartSlice";
+import { selectUser } from "@store/slices/userSlice";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import classes from "./index.module.scss";
 
 const GoodDescriptionCart = ({ goodData }: goodDataPropTypes) => {
   const dispatch = useDispatch();
-
+  const currentUser = useSelector(selectUser);
   const [counter, setCounter] = useState(1);
 
   const decrementHandler = () => {
@@ -25,8 +27,9 @@ const GoodDescriptionCart = ({ goodData }: goodDataPropTypes) => {
     quantity: counter,
   };
 
-  const addToCartHandler = () => {
+  const addToCartHandler = async () => {
     dispatch(addToCartAction(cartGood));
+    const res = await insertGoodCart(currentUser.username, counter, cartGood);
   };
 
   return (

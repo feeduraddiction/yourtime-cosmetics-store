@@ -16,6 +16,20 @@ export function updateCart(username: string, term: number, goodID: string) {
   });
 }
 
+export function insertGoodCart(username: string, term: number, good: {}) {
+  return fetch(api("insertGoodCart"), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username,
+      good,
+      term,
+    }),
+  });
+}
+
 export function removeGood(username: string, goodID: string) {
   return fetch(api("removeGood"), {
     method: "DELETE",

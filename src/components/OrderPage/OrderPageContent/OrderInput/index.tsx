@@ -53,7 +53,7 @@ const OrderInput = () => {
 
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
-    const dataToSend = {
+    const order = {
       userID: currentUser.id,
       username: currentUser.username,
       status: "confirmed",
@@ -72,7 +72,7 @@ const OrderInput = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(dataToSend),
+      body: JSON.stringify({order, user: currentUser }),
     });
     alert("Thank you for your order!");
     dispatch(clearLocalCartAction());

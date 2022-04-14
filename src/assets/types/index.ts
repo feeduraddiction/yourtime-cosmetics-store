@@ -1,4 +1,5 @@
-export interface goodPropTypes { //types for all data of one object from DB
+export interface goodPropTypes {
+  //types for all data of one object from DB
   name: string;
   brand: string;
   price: number;
@@ -12,12 +13,13 @@ export interface cartPropTypes extends goodPropTypes {
   quantity: number;
 }
 
-export interface goodDataPropTypes {  /// For description page
-    goodData: goodPropTypes;
+export interface goodDataPropTypes {
+  /// For description page
+  goodData: goodPropTypes;
 }
 
 export interface goodsPropTypes {
-    goods: goodPropTypes[];
+  goods: goodPropTypes[];
 }
 
 export interface cartGoodsPropTypes {
@@ -28,6 +30,19 @@ export interface cartGoodPropTypes {
   cartGood: cartPropTypes;
 }
 
-
-
-
+export interface orderPropTypes {
+  order: {
+    id: string;
+    orderInfo: {
+      username: string;
+      status: string;
+      orderDetails: {
+        date: string;
+        address: string;
+        country: string;
+        comment: string;
+        goods: cartPropTypes[];
+      };
+    };
+  };
+}

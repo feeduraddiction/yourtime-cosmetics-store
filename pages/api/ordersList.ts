@@ -1,30 +1,28 @@
-import { MongoClient, ObjectId } from "mongodb";
-
+import { MongoClient } from "mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<unknown>
 ) {
+  const { user } = req.body;
   const client = await MongoClient.connect(
     "mongodb+srv://feeduraddiction:Vjq1Gfhjkm2qwerty@cluster0.8swm7.mongodb.net/yourtime-cosmetics?retryWrites=true&w=majority"
   );
 
   const db = client.db();
-
-  const { order, user } = req.body;
-
   const ordersCollection = db.collection("orders");
-  const usersCollection = db.collection("users");
-
-  console.log(order, user);
-  const insertedOrder = await ordersCollection.insertOne({ order });
-  const removedCart = await usersCollection.updateOne(
-    { _id: new ObjectId(user.id) },
-    { $set: { "metadata.cart": [] } }
-  );
-
-  res.status(200).json(removedCart);
-
+  const result = await ordersCollection
+    .find({ "order.userID": user.id })
+    .toArray();
+  const data = result.map((item) => {
+    return {
+      order: {
+        id: item._id.toString(),
+        orderInfo: item.order,
+      },
+    };
+  });
+  res.status(200).json(data);
   client.close();
 }
