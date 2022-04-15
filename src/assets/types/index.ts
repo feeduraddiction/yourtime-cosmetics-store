@@ -31,18 +31,14 @@ export interface cartGoodPropTypes {
 }
 
 export interface orderPropTypes {
-  order: {
-    id: string;
-    orderInfo: {
-      username: string;
-      status: string;
-      orderDetails: {
-        date: string;
-        address: string;
-        country: string;
-        comment: string;
-        goods: cartPropTypes[];
-      };
-    };
+  _id: string;
+  username: string;
+  status: string;
+  orderDetails: {
+    date: string;
+    address: string;
+    country: string;
+    comment: string;
+    goods: cartPropTypes[];
   };
 }

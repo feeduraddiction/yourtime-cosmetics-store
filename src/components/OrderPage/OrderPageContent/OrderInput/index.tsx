@@ -72,7 +72,7 @@ const OrderInput = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({order, user: currentUser }),
+      body: JSON.stringify({ order, user: currentUser }),
     });
     alert("Thank you for your order!");
     dispatch(clearLocalCartAction());

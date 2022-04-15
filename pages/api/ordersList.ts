@@ -13,16 +13,8 @@ export default async function handler(
   const db = client.db();
   const ordersCollection = db.collection("orders");
   const result = await ordersCollection
-    .find({ "order.userID": user.id })
+    .find({ "userID": user.id })
     .toArray();
-  const data = result.map((item) => {
-    return {
-      order: {
-        id: item._id.toString(),
-        orderInfo: item.order,
-      },
-    };
-  });
-  res.status(200).json(data);
+  res.status(200).json(result);
   client.close();
 }

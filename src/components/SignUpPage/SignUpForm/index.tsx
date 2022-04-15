@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import { authorizeUserAction } from "@store/slices/userSlice";
 
-
+  
 const SignUpForm = () => {
   const router = useRouter();
   const dispatch = useDispatch();

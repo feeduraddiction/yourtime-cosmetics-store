@@ -23,8 +23,8 @@ const OrdersListPage = () => {
   console.log(data);
   return (
     <section className={classes.section}>
-      {data.map((orderItem, index) => (
-        <OrderListItem key={orderItem.order.id} order={orderItem.order} />
+      {data.map((orderItem) => (
+        <OrderListItem key={orderItem._id} order={orderItem} />
       ))}
     </section>
   );
