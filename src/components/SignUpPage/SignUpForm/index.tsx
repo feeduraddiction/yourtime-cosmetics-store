@@ -5,8 +5,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import { authorizeUserAction } from "@store/slices/userSlice";
-import { clearLocalCartAction } from "@store/slices/cartSlice";
-import { stringify } from "querystring";
+
 
 const SignUpForm = () => {
   const router = useRouter();
