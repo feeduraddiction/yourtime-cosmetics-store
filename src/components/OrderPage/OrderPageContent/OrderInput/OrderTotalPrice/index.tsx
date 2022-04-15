@@ -1,6 +1,5 @@
 import { selectCart } from "@store/slices/cartSlice";
 import { useSelector } from "react-redux";
-import OrderDetailsItem from "./OrderDetailsItem";
 import classes from "./index.module.scss";
 
 const OrderTotalPrice = () => {
