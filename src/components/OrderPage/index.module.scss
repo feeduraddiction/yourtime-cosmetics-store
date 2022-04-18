@@ -1,12 +1,7 @@
 @import "styles/colors";
 
 .orderPage {
-  padding: 15px 0;
   max-width: 1140px;
   margin: 25px auto;
-  border: 2px solid $primary;
-  border-radius: 15px;
-  h2 {
-    text-align: center;
-  }
+  padding: 15px;
 }

@@ -8,22 +8,6 @@
   h2 {
     margin: 20px 0 50px 0;
   }
-
-  .back {
-    text-align: start;
-    .backBtn {
-      background-color: transparent;
-      text-align: start;
-      border: none;
-      outline: none;
-      color: $black;
-      cursor: pointer;
-      &:hover {
-        background-color: transparent;
-        color: $primary;
-      }
-    }
-  }
 }
 
 .empty {

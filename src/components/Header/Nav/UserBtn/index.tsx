@@ -9,7 +9,7 @@ const UserBtn = () => {
   };
 
   return (
-    <li>
+    <li id="userIcon">
       <PersonIcon onClick={showUserWindow} />
     </li>
   );

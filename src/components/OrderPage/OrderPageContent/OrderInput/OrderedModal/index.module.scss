@@ -1,0 +1,34 @@
+@import "styles/colors";
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  max-width: 350px;
+  background-color: $white;
+  border: 1px solid $primary;
+  border-radius: 8px;
+  padding: 25px;
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  button {
+    margin-top: 25px;
+  }
+}
+.backdrop {
+  background-color: $primary;
+  opacity: 0.25;
+  position: fixed;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}

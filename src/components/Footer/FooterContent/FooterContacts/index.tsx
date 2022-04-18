@@ -1,12 +1,14 @@
-import classes from './index.module.scss';
+import classes from "./index.module.scss";
 
 const FooterContacts = () => {
   return (
     <div className={classes.contacts}>
       <h4>Contacts</h4>
-      <p>+123 45 6789123</p>
-      <p>+123 45 6789123</p>
-      <p className={classes.email}>withlove@yourtime.com</p>
+      <a href="tel: +123456789123">+123 45 6789123</a>
+      <a href="tel: +123456789124">+123 45 6789124</a>
+      <a href="mailto:withlove@yourtime.com" className={classes.email}>
+        withlove@yourtime.com
+      </a>
     </div>
   );
 };

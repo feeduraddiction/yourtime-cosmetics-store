@@ -15,7 +15,7 @@ const Counter = ({
   return (
     <div className={classes.counter}>
       <Button onClick={onDecrement}>-</Button>
-      {("000" + counter).slice(-3)}
+      {counter}
       <Button onClick={onIncrement}>+</Button>
     </div>
   );

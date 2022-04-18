@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import ContactsInput from "./ContactsInput";
 import AddressInput from "./AddressInput";
@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "@store/slices/userSlice";
 import { clearLocalCartAction, selectCart } from "@store/slices/cartSlice";
 import { useRouter } from "next/router";
+import OrderedModal from "./OrderedModal";
 
 const OrderInput = () => {
   const currentUser = useSelector(selectUser);
@@ -26,6 +27,8 @@ const OrderInput = () => {
   const [date, setDate] = useState("");
 
   const [comment, setComment] = useState("");
+
+  const [isOrdered, setIsOrdered] = useState(false);
 
   const changeFullnameHandler = (e: React.FormEvent<HTMLInputElement>) => {
     setFullname(e.currentTarget.value);
@@ -74,27 +77,29 @@ const OrderInput = () => {
       },
       body: JSON.stringify({ order, user: currentUser }),
     });
-    alert("Thank you for your order!");
+    setIsOrdered(true);
     dispatch(clearLocalCartAction());
-    router.push("/");
   };
   return (
-    <form onSubmit={submitHandler} className={classes.form}>
-      <ContactsInput
-        onChangeFullname={changeFullnameHandler}
-        onChangePhone={changePhoneHandler}
-      />
-      <AddressInput
-        onChangeCountry={changeCountryHandler}
-        onChangeAddress={changeAddressHandler}
-      />
-      <DateTimeInput onChangeDate={changeDateHandler} />
-      <CommentInput onChangeComment={changeCommentHandler} />
-      <div className={classes.total}>
-        <OrderTotalPrice />
-        <Button type="submit">Checkout</Button>
-      </div>
-    </form>
+    <Fragment>
+      {!isOrdered && <OrderedModal  />}
+      <form onSubmit={submitHandler} className={classes.form}>
+        <ContactsInput
+          onChangeFullname={changeFullnameHandler}
+          onChangePhone={changePhoneHandler}
+        />
+        <AddressInput
+          onChangeCountry={changeCountryHandler}
+          onChangeAddress={changeAddressHandler}
+        />
+        <DateTimeInput onChangeDate={changeDateHandler} />
+        <CommentInput onChangeComment={changeCommentHandler} />
+        <div className={classes.total}>
+          <OrderTotalPrice />
+          <Button type="submit">Checkout</Button>
+        </div>
+      </form>
+    </Fragment>
   );
 };
 

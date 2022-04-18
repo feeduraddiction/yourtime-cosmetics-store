@@ -5,10 +5,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 560px;
-    h2{
+    max-width: 440px;
+    h1{
         color: $primary;
         margin-bottom: 8px
+    }
+
+    p {
+        font-weight: 600;
     }
     button {
         margin-top: 24px;
