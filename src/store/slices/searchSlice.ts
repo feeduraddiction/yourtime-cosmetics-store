@@ -1,13 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { searchState } from "@utils/types/storeTypes";
 import { RootState } from "../store";
-
-
-
-
-interface searchState {
-  isSearchActive: boolean;
-  searchInput: string;
-}
 
 const initialState = {
   isSearchActive: false,

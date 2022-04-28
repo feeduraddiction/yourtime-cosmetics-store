@@ -1,6 +1,6 @@
 import CategoriesSection from "@components/MainPage/CategoriesSection";
 import TrendingSection from "@components/MainPage/TrendingSection";
-import { goodsPropTypes } from "@assets/types";
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
 import HeroSection from "./HeroSection";
 
 const CataloguePage = ({goods}:goodsPropTypes) => {

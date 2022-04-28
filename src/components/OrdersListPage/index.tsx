@@ -1,4 +1,4 @@
-import { orderPropTypes } from "@assets/types";
+import { orderPropTypes } from "src/utils/types/componentsTypes";
 import { selectUser } from "@store/slices/userSlice";
 import { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";

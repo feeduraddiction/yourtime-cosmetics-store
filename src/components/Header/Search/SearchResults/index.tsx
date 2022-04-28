@@ -7,8 +7,8 @@ import classes from "./index.module.scss";
 import SearchResult from "./SearchResult";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { pathToCategory } from "@assets/functions";
-import { goodPropTypes } from "@assets/types";
+import { pathToCategory } from "src/utils/functions";
+import { goodPropTypes } from "src/utils/types/componentsTypes";
 
 const SearchResults = () => {
   const router = useRouter();

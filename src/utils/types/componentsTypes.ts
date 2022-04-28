@@ -42,3 +42,25 @@ export interface orderPropTypes {
     goods: cartPropTypes[];
   };
 }
+
+export interface goodDescriptionPropTypes {
+  goodData: goodPropTypes;
+  goods: goodPropTypes[];
+}
+
+export interface buttonPropTypes {
+  children: React.ReactNode;
+  onClick?: (e: React.MouseEvent) => void;
+  type?: "button" | "submit" | "reset" | undefined;
+}
+
+export interface cardTextPropTypes {
+  name: string;
+  price: number;
+  brand: string;
+}
+
+export interface goodCardPropTypes {
+  key?: string;
+  good: goodPropTypes;
+}

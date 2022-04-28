@@ -7,7 +7,7 @@ import {
   clearLocalCartAction,
   updateCartAction,
 } from "@store/slices/cartSlice";
-import { api } from "@assets/functions";
+import { api } from "src/utils/functions";
 
 const LoginInput = () => {
   const dispatch = useDispatch();

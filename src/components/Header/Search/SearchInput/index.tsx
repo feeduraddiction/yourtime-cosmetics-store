@@ -17,8 +17,8 @@ const SearchInput = () => {
     document.body.classList.remove("scroll-lock");
   };
 
-  const searchHandler = (e:any) => {
-    dispatch(searchInputAction(e.target.value));
+  const searchHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    dispatch(searchInputAction(e.currentTarget.value));
     e.preventDefault();
   };
   return (

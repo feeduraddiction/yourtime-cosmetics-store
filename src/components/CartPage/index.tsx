@@ -1,4 +1,4 @@
-import { cartGoodsPropTypes } from "@assets/types";
+import { cartGoodsPropTypes } from "src/utils/types/componentsTypes";
 import CartSection from "./CartSection";
 
 const CartPage = ({cartGoods}:cartGoodsPropTypes) => {

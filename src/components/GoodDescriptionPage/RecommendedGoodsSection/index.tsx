@@ -1,4 +1,4 @@
-import { goodsPropTypes } from "@assets/types";
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
 import RecommendedGoodsContent from "./RecommendedGoodsContent";
 
 const RecommendedGoodsSection = ({ goods }: goodsPropTypes) => {

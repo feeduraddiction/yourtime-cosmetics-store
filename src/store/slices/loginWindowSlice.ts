@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loginWindowState } from "@utils/types/storeTypes";
 import { RootState } from "../store";
-
-interface loginWindowState {
-  isLoginWindowActive: boolean;
-}
 
 const initialState = {
   isLoginWindowActive: false,

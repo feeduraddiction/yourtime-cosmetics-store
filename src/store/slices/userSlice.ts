@@ -1,18 +1,6 @@
-import { cartPropTypes } from "@assets/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-interface userState {
-  user: {
-    id: string,
-    username: string;
-    email: string;
-    isAdmin: boolean;
-    metadata: {
-      cart: cartPropTypes[];
-    };
-  };
-}
+import { userPayloadPropTypes, userState } from "@utils/types/storeTypes";
 
 const initialState = {
   user: {
@@ -32,15 +20,7 @@ const userSlice = createSlice({
   reducers: {
     authorizeUser(
       state,
-      action: PayloadAction<{
-        id: string,
-        username: string;
-        isAdmin: boolean;
-        email: string;
-        metadata: {
-          cart: cartPropTypes[];
-        };
-      }>
+      action: PayloadAction<userPayloadPropTypes>
     ) {
       if (action.payload.isAdmin) {
         state.user.username = action.payload.username;

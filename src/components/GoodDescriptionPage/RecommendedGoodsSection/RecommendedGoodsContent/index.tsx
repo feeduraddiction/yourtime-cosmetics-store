@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { goodsPropTypes } from "@assets/types";
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
 import Goods from "@components/MainPage/TrendingSection/Goods";
 import classes from "./index.module.scss";
 

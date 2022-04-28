@@ -1,10 +1,7 @@
-import { cartPropTypes } from "@assets/types";
+import { cartPropTypes } from "@utils/types/componentsTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-interface cartState {
-  cart: cartPropTypes[];
-}
+import { cartState } from "@utils/types/storeTypes";
 
 const initialState = {
   cart: [],

@@ -1,15 +1,6 @@
-import { MongoClient, ObjectId } from "mongodb";
+import { MongoClient } from "mongodb";
 
 import type { NextApiRequest, NextApiResponse } from "next";
-
-// type Data = {
-//   //   id?: string;
-//   //   username?: string;
-//   //   email?: string;
-//   //   isAdmin?: boolean;
-//   //   error?: string;
-//   //   metada?: {};
-// };
 
 export default async function handler(
   req: NextApiRequest,
@@ -22,8 +13,8 @@ export default async function handler(
   );
 
   const db = client.db();
-
   const usersCollection = db.collection("users");
+
   const isGoodExists = await usersCollection.findOne({
     username,
     "metadata.cart.id": good.id,

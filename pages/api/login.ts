@@ -2,15 +2,6 @@ import CryptoJS from "crypto-js";
 import { MongoClient } from "mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type Data = {
-  id?: string,
-  username?: string;
-  email?: string;
-  isAdmin?: boolean;
-  error?: string;
-  metada?: {}
-};
-
 declare var process: {
   env: {
     PASS_SEC: string;
@@ -19,7 +10,7 @@ declare var process: {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<unknown>
 ) {
   const { username, password } = req.body;
 

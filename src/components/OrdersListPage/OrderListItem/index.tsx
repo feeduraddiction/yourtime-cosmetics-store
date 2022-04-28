@@ -1,4 +1,4 @@
-import { orderPropTypes } from "@assets/types";
+import { orderPropTypes } from "src/utils/types/componentsTypes";
 import classes from "./index.module.scss";
 const OrderListItem = ({ order }: {order: orderPropTypes}) => {
   return (

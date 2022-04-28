@@ -16,8 +16,7 @@ export default async function handler(
 
   const ordersCollection = db.collection("orders");
   const usersCollection = db.collection("users");
-
-  console.log(order, user);
+  
   const insertedOrder = await ordersCollection.insertOne(order);
   const removedCart = await usersCollection.updateOne(
     { _id: new ObjectId(user.id) },

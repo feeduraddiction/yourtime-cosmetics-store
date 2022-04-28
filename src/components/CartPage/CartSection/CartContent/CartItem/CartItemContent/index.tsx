@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import CardLeftSide from "@components/UI/Card/CardText/CardLeftSide";
 import Counter from "@components/UI/Counter";
-import { cartGoodPropTypes } from "@assets/types";
+import { cartGoodPropTypes } from "src/utils/types/componentsTypes";
 
 import classes from "./index.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementCart, decrementCart } from "@store/slices/cartSlice";
 import { selectUser } from "@store/slices/userSlice";
-import { updateCart } from "@assets/functions";
+import { updateCart } from "@utils/http";
 
 const CartItemContent = ({ cartGood }: cartGoodPropTypes) => {
   const dispatch = useDispatch();

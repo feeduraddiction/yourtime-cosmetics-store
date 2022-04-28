@@ -1,4 +1,4 @@
-import { goodsPropTypes } from '@assets/types';
+import { goodsPropTypes } from 'src/utils/types/componentsTypes';
 import classes from '../index.module.scss';
 import Card from '@components/UI/Card';
 

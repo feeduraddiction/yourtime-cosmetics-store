@@ -1,5 +1,5 @@
-import { removeGood } from "@assets/functions";
-import { cartGoodPropTypes } from "@assets/types";
+import { removeGood } from "@utils/http";
+import { cartGoodPropTypes } from "src/utils/types/componentsTypes";
 import { removeFromCartAction } from "@store/slices/cartSlice";
 import { selectUser } from "@store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";

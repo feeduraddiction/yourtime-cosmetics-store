@@ -1,5 +1,5 @@
 import CartContent from "./CartContent";
-import { cartGoodsPropTypes } from "@assets/types";
+import { cartGoodsPropTypes } from "src/utils/types/componentsTypes";
 import classes from "./index.module.scss";
 
 const CartSection = ({ cartGoods }: cartGoodsPropTypes) => {

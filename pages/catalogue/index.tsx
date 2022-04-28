@@ -1,11 +1,20 @@
 import CataloguePage from "@components/CataloguePage";
+import Head from "next/head";
 import { NextPage } from "next";
 import { MongoClient } from "mongodb";
-import { goodsPropTypes } from "@assets/types";
-
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
 
 const Catalogue: NextPage<goodsPropTypes> = ({ goods }) => {
-  return <CataloguePage goods={goods} />;
+  return (
+    <>
+      <Head>
+        <title>Catalogue</title>
+        <meta name="YOURtime catalogue" content="Catalogue of YOURtime store" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <CataloguePage goods={goods} />
+    </>
+  );
 };
 
 export async function getStaticProps() {

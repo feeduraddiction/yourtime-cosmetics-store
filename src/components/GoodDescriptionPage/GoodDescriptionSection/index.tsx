@@ -1,4 +1,4 @@
-import { goodDataPropTypes } from "@assets/types";
+import { goodDataPropTypes } from "src/utils/types/componentsTypes";
 import GoodDescriptionContent from "./GoodDescriptionContent";
 
 const GoodDescriptionSection = ({goodData}:goodDataPropTypes) => {

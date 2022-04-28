@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import { goodDataPropTypes } from "@assets/types";
+import { goodDataPropTypes } from "src/utils/types/componentsTypes";
 import GoodDescriptionCart from "./GoodDescriptionCart";
 import GoodDescriptionContentText from "./GoodDescriptionContentText";
 import classes from "./index.module.scss";

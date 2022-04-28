@@ -17,11 +17,4 @@ export default async function handler(
   client.close();
 }
 
-export async function getCollection(collection: string) {
-  const client = await MongoClient.connect(
-    "mongodb+srv://feeduraddiction:Vjq1Gfhjkm2qwerty@cluster0.8swm7.mongodb.net/yourtime-cosmetics?retryWrites=true&w=majority"
-  );
-  const db = client.db();
-  return db.collection(collection);
-}
 

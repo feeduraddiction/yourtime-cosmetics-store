@@ -12,6 +12,7 @@ const UserPanel = ({ username }: { username: string }) => {
   const logoutHandler = () => {
     dispatch(logoutAction());
     dispatch(clearLocalCartAction());
+    router.push("/");
   };
 
   const routeToOrdersHandler = () => {

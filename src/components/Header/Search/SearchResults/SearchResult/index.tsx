@@ -1,4 +1,4 @@
-import { pathToCategory } from "@assets/functions";
+import { pathToCategory } from "src/utils/functions";
 import { useRouter } from "next/router";
 import classes from "./index.module.scss";
 import SearchResultContent from "./SearchResultContent";

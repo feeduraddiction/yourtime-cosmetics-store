@@ -1,4 +1,4 @@
-import { goodsPropTypes } from "@assets/types";
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
 import AdvantagesSection from "./AdvantagesSection";
 import CategoriesSection from "./CategoriesSection";
 import DiscountSection from "./DiscountSection";

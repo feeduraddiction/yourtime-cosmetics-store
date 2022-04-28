@@ -1,14 +1,25 @@
 import CategoryPage from "@components/CategoryPage";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { MongoClient } from "mongodb";
 import { ParsedUrlQuery } from "querystring";
-import { goodsPropTypes } from "@assets/types";
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
+import { useRouter } from "next/router";
+import { upperCaseOfCategory } from "@utils/functions";
 
 const Category: NextPage<goodsPropTypes> = ({ goods }) => {
+  const router = useRouter();
+  const headTitle = upperCaseOfCategory(router.query.category?.toString());
+
   return (
-    <div>
+    <>
+      <Head>
+        <title>{headTitle}</title>
+        <meta name="YOURtime" content="Main page of store" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <CategoryPage goods={goods} />
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import CartItem from "./CartItem";
 import classes from "./index.module.scss";
 import TotalPrice from "./TotalPrice";
-import { cartGoodsPropTypes } from "@assets/types";
+import { cartGoodsPropTypes } from "src/utils/types/componentsTypes";
 import { useSelector } from "react-redux";
 import { selectUser } from "@store/slices/userSlice";
 import BackToShoppingBtn from "@components/UI/BackToShoppingBtn";

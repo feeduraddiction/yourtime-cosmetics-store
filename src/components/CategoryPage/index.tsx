@@ -1,4 +1,4 @@
-import { goodsPropTypes } from "@assets/types";
+import { goodsPropTypes } from "src/utils/types/componentsTypes";
 import HeroSection from "@components/CataloguePage/HeroSection";
 import CategoryProducts from "./CategoryProducts";
 

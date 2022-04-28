@@ -1,5 +1,5 @@
-import { insertGoodCart } from "@assets/functions";
-import { goodDataPropTypes } from "@assets/types";
+import { insertGoodCart } from "src/utils/functions";
+import { goodDataPropTypes } from "src/utils/types/componentsTypes";
 import Button from "@components/UI/Button";
 import Counter from "@components/UI/Counter";
 import { addToCartAction } from "@store/slices/cartSlice";

@@ -82,7 +82,7 @@ const OrderInput = () => {
   };
   return (
     <Fragment>
-      {!isOrdered && <OrderedModal  />}
+      {isOrdered && <OrderedModal  />}
       <form onSubmit={submitHandler} className={classes.form}>
         <ContactsInput
           onChangeFullname={changeFullnameHandler}
