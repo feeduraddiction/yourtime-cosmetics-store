@@ -1,5 +1,3 @@
-import { MongoClient } from "mongodb";
-
 export function pathToCategory(name: string) {
   return name.toLowerCase().replace(/\s+/g, "");
 }
