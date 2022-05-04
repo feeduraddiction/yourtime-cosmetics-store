@@ -1,4 +1,4 @@
-import { goodDescriptionPropTypes } from "pages/catalogue/[category]/[goodID]";
+import { goodDescriptionPropTypes } from "@utils/types/componentsTypes";
 import GoodDescriptionSection from "./GoodDescriptionSection";
 import RecommendedGoodsSection from "./RecommendedGoodsSection";
 
