@@ -1,4 +1,4 @@
-import { insertGoodCart } from "src/utils/functions";
+import { insertGoodCart } from "@utils/http";
 import { goodDataPropTypes } from "src/utils/types/componentsTypes";
 import Button from "@components/UI/Button";
 import Counter from "@components/UI/Counter";
