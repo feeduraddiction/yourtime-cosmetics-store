@@ -1,0 +1,9 @@
+.advantages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1120px;
+    margin: 0 auto; 
+    padding: 50px 15px;
+}

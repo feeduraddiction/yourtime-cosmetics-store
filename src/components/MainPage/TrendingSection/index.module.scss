@@ -1,0 +1,37 @@
+@import 'styles/mediaSizes';
+
+.trendingSection {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1120px;
+  padding: 0 15px 50px 15px;
+  h3 {
+    margin: 24px 0;
+  }
+}
+
+.products {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media(max-width: $tablet-horizontal) {
+  .products {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media(max-width: $tablet-vertical) {
+  .products {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media(max-width: $mobile) {
+  .products {
+    grid-template-columns: auto;
+  }
+}

@@ -1,0 +1,19 @@
+@import 'styles/mediaSizes';
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+
+    max-width: 1120px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+@media(max-width: $tablet-horizontal){
+    .content {
+        justify-content: space-evenly;
+    }
+}

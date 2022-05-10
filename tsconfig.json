@@ -12,6 +12,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "baseUrl": ".",
+    "paths" : {
+      "@components/*" : ["./src/components","./src/components/*" ],
+      "@UI/*" : ["./src/components/UI/*"],
+      "@assets/*" : ["./src/assets", "./src/assets/*"],
+      "@store/*" : ["./src/store/*"],
+      "@utils/*" : ["./src/utils/*", "./src/utils"]
+    },
     "jsx": "preserve",
     "incremental": true
   },

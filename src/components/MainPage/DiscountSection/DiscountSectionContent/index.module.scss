@@ -1,0 +1,17 @@
+@import "styles/colors";
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 560px;
+
+  h2 {
+    color: $primary;
+    margin-bottom: 8px;
+  }
+  button {
+    margin-top: 24px;
+  }
+}

@@ -1,0 +1,28 @@
+@import 'styles/mediaSizes';
+
+.category {
+    text-align: center;
+    width: calc(100% / 2 - 48px);
+    margin: 24px;
+    transition: all 0.6s ease-in;
+    h4{
+        margin-top: 24px;
+    }
+
+
+    img{
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    
+    img:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media(max-width: $tablet-vertical){
+    .category{
+        width: calc(100% - 48px);
+    }
+}
+

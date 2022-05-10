@@ -1,0 +1,18 @@
+@import "styles/colors";
+
+.order {
+  border: 1px solid $primary;
+  border-radius: 15px;
+  margin: 40px 0;
+  padding: 25px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.goods {
+  margin-top: 25px;
+}
+
+.good {
+  margin-top: 15px;
+}

@@ -1,0 +1,13 @@
+@import "styles/colors";
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+//   max-width: 40%;
+  h3 {
+    color: $primary;
+    margin: 8px 0 22px 0;
+  }
+}

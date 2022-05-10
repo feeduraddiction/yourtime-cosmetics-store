@@ -1,0 +1,21 @@
+@import 'styles/mediaSizes';
+
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h4 {
+        margin-bottom: 24px;
+    }
+
+    .email {
+        margin-top: 12px;
+    }
+}
+
+@media(max-width: $tablet-horizontal){
+    .contacts {
+        display: none;
+    }
+}

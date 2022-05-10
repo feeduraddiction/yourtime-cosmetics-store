@@ -1,0 +1,18 @@
+@import "styles/colors";
+
+.content {
+  text-align: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 15px 50px 15px;
+  h2 {
+    margin: 20px 0 50px 0;
+  }
+}
+
+.empty {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

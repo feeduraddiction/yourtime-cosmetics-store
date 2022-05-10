@@ -1,0 +1,27 @@
+@import "styles/colors";
+
+.button {
+  border: 2px solid $primary;
+  border-radius: 8px;
+  padding: 9px 28px;
+  background: $primary;
+  color: $white;
+  transition: all 0.4s ease;
+  cursor: pointer;
+
+  &:focus{
+    border-color: $white;
+    color: $white;
+  }
+
+  &:hover{
+    border-color: $primary;
+    background: $primary-light;
+    color: $primary;
+  }
+
+  &:active {
+      color: $white;
+  }
+}
+

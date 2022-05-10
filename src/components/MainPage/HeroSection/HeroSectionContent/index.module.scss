@@ -1,0 +1,20 @@
+@import 'styles/colors';
+
+.heroSectionContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 440px;
+    h1{
+        color: $primary;
+        margin-bottom: 8px
+    }
+
+    p {
+        font-weight: 600;
+    }
+    button {
+        margin-top: 24px;
+    }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "brand": "AVRIL",
+    "name": "Normal hair cold-process solid shampoo",
+    "type": "For hair",
+    "price": "7",
+    "description": "Avril certified organic normal hair cold-process solid shampoo is made in the traditional way: the oils used retain all their virtues to provide real care, in addition to cleaning. Composed of white clay, this shampoo is suitable for normal hair.",
+    "image": "https://www.avril-organic.com/4278-home_default/normal-hair-cold-process-solid-shampoo-100g-certified-organic.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Dry and damaged hair cold-process solid shampoo",
+    "type": "For hair",
+    "price": "7",
+    "description": "Avril certified organic, dry and damaged hair, cold-process solid shampoo is made in the traditional way: the oils used retain all their virtues to provide real care, in addition to cleaning. Composed of organic fenugreek, this shampoo is suitable for dry hair.",
+    "image": "https://www.avril-organic.com/4279-home_default/dry-and-damaged-hair-cold-process-solid-shampoo-100g-certified-organic.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Greasy hair cold-process solid shampoo",
+    "type": "For hair",
+    "price": "7",
+    "description": "Avril certified organic greasy hair cold-process solid shampoo is made in the traditional way: the oils used retain all their virtues to provide real care, in addition to cleaning. Composed of green clay, this shampoo is suitable for oily hair.",
+    "image": "https://www.avril-organic.com/4277-product_default/greasy-hair-cold-process-solid-shampoo-100g-certified-organic.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Purifying shampoo",
+    "type": "For hair",
+    "price": "6",
+    "description": "Avril certified organic purifying shampoo has a gentle cleansing base with organic pepper mint essential oil that purify the scalp.",
+    "image": "https://www.avril-organic.com/3586-product_default/shampooing-purifiant-cheveux-gras-250-ml-certifie-bio.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Conditioner Repair",
+    "type": "For hair",
+    "price": "7",
+    "description": "Avril certified organic Repair Conditioner! Enriched with organic shea butter, it brings suppleness, radiance and shine to the driest hair!",
+    "image": "https://www.avril-organic.com/4107-product_default/organic-hair-conditioner-dry-damaged-hair.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Face & body cream",
+    "type": "For body",
+    "price": "8",
+    "description": "Your skin is dry? The Avril face and body cream certified organic brings immediate soothing for your skin. Enriched with shea butter and aloe vera, it nourishes and protects your skin.",
+    "image": "https://www.avril-organic.com/3557-home_default/organic-face-body-moisturizer-hydrating-cream.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Body moisturizer",
+    "type": "For body",
+    "price": "7",
+    "description": "Take care of your skin with Avril certified organic body milk. Composed of organic aloe vera and organic shea butter, it nourishes, softens and protects the skin without greasy effect!",
+    "image": "https://www.avril-organic.com/4154-product_default/organic-body-lotion.jpg"
+  },
+  {
+    "brand": "AVRIL",
+    "name": "Body scrub",
+    "type": "For body",
+    "price": "8",
+    "description": "Avril certified organic body scrub contains organic rice powder for an effective and gentle exfoliation. Thanks to its organic white lilac extract, it leaves your skin with a fresh and delicate scent.",
+    "image": "https://www.avril-organic.com/3601-home_default/gommage-corporel-200-ml-certifie-bio.jpg"
+  },
+  {
+    "brand": "FLOW",
+    "name": "Honey Milk Facial Soap",
+    "type": "For face",
+    "price": "18",
+    "description": "HONEY MILK facial soap bar is hand made from luxurious organic plant oils and infused with gorgeously moisturising Finnish raw honey, skin-softening exotic coconut milk and skin tone brightening, antioxidant rich lingonberry seed oil from the wilderness of Lapland. The soft, creamy foam together with pink clay cleanse gently yet effectively, without drying out the skin.",
+    "image": "https://cdn.shopify.com/s/files/1/0495/4475/7415/products/FLOWHoneyMilkFacialSoap1_540x.jpg?v=1614081350"
+  },
+  {
+    "brand": "FLOW",
+    "name": "Reoship Intensive Treatment Oil",
+    "type": "For face",
+    "price": "30",
+    "description": "A super effective oil for repairing and treating your skin, our Rosehip Skin Repair Treatment Oil will heal a variety of skin problems. Helpful for balancing the skin’s secretion of sebum, this oil will hydrate the skin while smoothing wrinkles and fine lines. With regular use, it will also improve your skin’s elasticity and fade the appearance of scars, including those caused by acne. A great oil to use on sun rashes and sunburns, it’s gentle enough to be used on all skin types, including sensitive and atopic skin.",
+    "image": "https://cdn.shopify.com/s/files/1/0495/4475/7415/products/FLOWRosehipIntensiveTreatmentOil3_540x.jpg?v=1614690577"
+  },
+  {
+    "brand": "FLOW",
+    "name": "Strawberry Milk Maks with Hyaluronic Acid",
+    "type": "For face",
+    "price": "38",
+    "description": "Tired looking and dry skin? This brightening facial mask gently cleanses, soothes, moisturises and gives the skin a youthful and glowing look. In regular use, the mask improves the skin’s moisture balance and firmness. Immediately smoother complexion.",
+    "image": "https://cdn.shopify.com/s/files/1/0495/4475/7415/products/FLOWStrawberryMilkMask1_540x.jpg?v=1614081330"
+  },
+  {
+    "brand": "FUSHI",
+    "name": "Tulsi & Jasmine Hand Duo",
+    "type": "For hand",
+    "price": "12",
+    "description": "A luxurious and nourishing hand wash and lotion duo to gently soothe and soften dry skin and hands.",
+    "image": "https://cdn.shopify.com/s/files/1/0567/5434/0030/products/fushi-wellbeing-tulsi-jasmine-hand-wash-lotion-duo-36237280280808_550x.jpg?v=1638445687"
+  },
+  {
+    "brand": "FUSHI",
+    "name": "Soothing Tulsi & Jasmine Hand Lotion",
+    "type": "For hand",
+    "price": "10",
+    "description": "Gentle on the skin with Tulsi and fragranced with uplifting Jasmine and refreshing Peach to leave the skin feeling nourished.",
+    "image": "https://cdn.shopify.com/s/files/1/0567/5434/0030/products/fushi-hand-lotion-soothing-tulsi-jasmine-hand-lotion-230ml-29367523115198_550x.png?v=1638789518"
+  },
+  {
+    "brand": "FUSHI",
+    "name": "Purifying Neem & Tea Tree Hand Lotion",
+    "type": "For hand",
+    "price": "163",
+    "description": "This ultra-purifying and cleansing hand lotion has been formulated to gently sanitise all skin types.",
+    "image": "https://cdn.shopify.com/s/files/1/0567/5434/0030/products/fushi-zero-waste-purifying-neem-tea-tree-hand-lotion-5l-29420022890686_550x.png?v=1638789228"
+  }
+]

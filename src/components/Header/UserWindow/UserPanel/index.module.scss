@@ -1,0 +1,11 @@
+.userPanel{
+    height: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+     button {
+         margin: 25px 0;
+     }
+     padding: 25px 30px;
+}

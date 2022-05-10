@@ -1,0 +1,15 @@
+@import "styles/colors";
+
+.content {
+  padding: 50px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $primary;
+  border-radius: 15px;
+  position: relative;
+  h2 {
+    text-align: center;
+  }
+}
